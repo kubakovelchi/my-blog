@@ -1,6 +1,23 @@
 import React from 'react';
+import {popularpost} from "../constans";
 
 const PopularPost = () => {
+
+    const elementpost =popularpost.map(post =>
+        <li className="w3-padding-16">
+            <img
+                src={post.img}
+                alt="Image"
+                className="w3-left w3-margin-right"
+                style={{ width: 50 }}
+            />
+            <span className="w3-large">{post.title}</span>
+            <br />
+            <span>{post.text}</span>
+        </li>
+    )
+
+
     return (
         <div>
             {/* Posts */}
@@ -9,7 +26,11 @@ const PopularPost = () => {
                     <h4>Popular Posts</h4>
                 </div>
                 <ul className="w3-ul w3-hoverable w3-white">
-                    <li className="w3-padding-16">
+
+                    {elementpost}
+
+
+                    {/*<li className="w3-padding-16">
                         <img
                             src="https://www.w3schools.com/w3images/workshop.jpg"
                             alt="Image"
@@ -52,7 +73,7 @@ const PopularPost = () => {
                         <span className="w3-large">Mingsum</span>
                         <br />
                         <span>Lorem ipsum dipsum</span>
-                    </li>
+                    </li>*/}
                 </ul>
             </div>
         </div>
